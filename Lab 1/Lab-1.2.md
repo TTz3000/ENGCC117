@@ -1,4 +1,4 @@
-## Computer Programming for Computer Engineer - Lab 1.1
+## Computer Programming for Computer Engineer - Lab 1.2
 
 # CODE
 ```c++
