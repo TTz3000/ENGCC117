@@ -18,7 +18,7 @@ int GetSet( int d[] ) {
     printf("Input col : ");
     scanf("%d" , &col);
 
-     for (int i = 0; i < col ; i++)
+    for (int i = 0; i < col ; i++)
     {
         printf("Input value in col [%d] : " , i);
         scanf("%d" , &d[i]);
@@ -29,7 +29,7 @@ int GetSet( int d[] ) {
         printf("Col [%d] = %d \n" , i , d[i]);
     }
 
-    return 0;
+    return col;
 }
 ```
 
