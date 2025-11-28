@@ -24,12 +24,12 @@ void GetMatrix( int value[], int *row, int *col ) {
         for (int j = 0; j < *col ; j++) {
             printf("Input value in [%d][%d] : " , i , j );
             scanf("%d" , &value[ i * *col + j ]);
-    }
+        }
     }
     for (int i = 0; i < *row ; i++) {
         for (int j = 0; j < *col ; j++) {
             printf("Column [%d][%d] : %d \n" , i , j , value[ i * *col + j ]);
-    }
+        }
     }
 }
 ```
