@@ -1,36 +1,41 @@
-## Computer Programming for Computer Engineer - Lab 1.5
+## Computer Programming for Computer Engineer - Lab 1.6
 
 # CODE
 ```c++
 #include <stdio.h>
 
-void GetMatrix( int value[], int *row, int *col ) ;
+int GetMatrix( int *row, int *col ) ;
 
 int main() {
     int *data, m, n ;
-    GetMatrix( data, &m, &n);
+    data = GetMatrix( &m, &n) ;
+    delete [] data;
     return 0 ;
 }
 
-void GetMatrix( int value[], int *row, int *col ) {
+int GetMatrix( int *row, int *col ) {
     printf("How many row : ");
     scanf("%d", row);
     printf("How many col : ");
     scanf("%d", col);
 
-    value = new int[*row * *col];
+    int *ar;
+    ar = new int[ *row * *col];
+
+    for (int i = 0; i < *row; i++) {
+        for (int j = 0; j < *col; j++) {
+            printf("Input value in [%d][%d] = ", i, j);
+            scanf("%d", &ar[ i * *col + j ]);
+        }
+    }
 
     for (int i = 0; i < *row ; i++) {
         for (int j = 0; j < *col ; j++) {
-            printf("Input value in [%d][%d] : " , i , j );
-            scanf("%d" , &value[ i * *col + j ]);
+            printf("Column [%d][%d] : %d \n" , i , j , ar[ i * *col + j ]);
+        }
     }
-    }
-    for (int i = 0; i < *row ; i++) {
-        for (int j = 0; j < *col ; j++) {
-            printf("Column [%d][%d] : %d \n" , i , j , value[ i * *col + j ]);
-    }
-    }
+    
+    return *ar;
 }
 ```
 
