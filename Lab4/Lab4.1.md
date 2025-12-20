@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void go( int **p, int *z ) ;
+void go( int **A, int *Z ) ;
 
 int main (){
     int *a, b = 10, c = 20 ;
@@ -18,9 +18,9 @@ int main (){
     return 0 ;
 }
 
-void go( int **p, int *z ) {
-    *p = z;
-    printf( "\n%d %p %p", **p, *p, p);
+void go( int **A, int *Z ) {
+    *A = Z;
+    printf( "\n%d %p %p", **A, *A, A);
 }
 ```
 
