@@ -49,7 +49,6 @@ void ShowAll( studentNode *walk ) {
 }
 
 studentNode *AddNode(studentNode **start, const char *n, int a, char s, float g) {
-    // เปลี่ยนจาก malloc เป็น new
     studentNode *newnode = new studentNode;
     strcpy( newnode -> name , n );
     newnode -> age = a;
