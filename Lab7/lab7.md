@@ -62,18 +62,6 @@ int main() {
     return 0;
 }
 
-linklist::linklist() {
-    start = NULL;
-    now = &start;
-}
-
-linklist::~linklist() {
-    now = &start;
-    while (start != NULL) {
-        delnode();
-    }
-} 
-
 void linklist::insnode(const char n[], int a, char s, float g) {
     StuNode *newNode = new StuNode; 
     strcpy(newNode->name, n);
@@ -82,20 +70,6 @@ void linklist::insnode(const char n[], int a, char s, float g) {
     newNode->gpa = g;
     newNode->next = *now;
     *now = newNode;
-}
-
-void linklist::delnode() {
-    if (*now != NULL) {
-        StuNode *temp = *now;
-        *now = (*now)->next;
-        delete temp; 
-    }
-}
-
-void linklist::gonext() {
-    if (*now != NULL) {
-        now = &((*now)->next);
-    }
 }
 
 void linklist::shownode() {
@@ -113,6 +87,34 @@ void newlist::shownode() {
         printf("%s %s\n", (*now)->name, (*now)->next->name);
     }
 }
+
+linklist::linklist() {
+    start = NULL;
+    now = &start;
+}
+
+linklist::~linklist() {
+    now = &start;
+    while (start != NULL) {
+        delnode();
+    }
+} 
+
+void linklist::delnode() {
+    if (*now != NULL) {
+        StuNode *temp = *now;
+        *now = (*now)->next;
+        delete temp; 
+    }
+}
+
+void linklist::gonext() {
+    if (*now != NULL) {
+        now = &((*now)->next);
+    }
+}
+
+
 ```
 
 ## TEST CASE
